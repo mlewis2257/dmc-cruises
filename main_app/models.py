@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from django.db.models import IntegerField
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
@@ -15,7 +17,7 @@ LOCATION = (
     ('P', 'Portside'),
     ('S', 'Starboard Side'),
     ('F', 'Front of Ship'),
-    ('BS'. 'Back of Ship')
+    ('BS', 'Back of Ship')
 )
 
 
@@ -43,6 +45,20 @@ class Cruise(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'cruise_id': self.id})
 
+class User(models.Model):
+    username = models.CharField(max_length=25)
+    password = models.CharField(max_length=50)
+    email = models.TextField()
+    first_name = models.TextField()
+    last_name = models.TextField()
+    
+class Booking(models.Model):
+    destinations = models.ManyToManyField(Destination)
+    price = models.IntegerField()
+
+    cruise = models.ForeignKey(Cruise, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
 class Room(models.Model):
     type = models.CharField(
         max_length=50,
@@ -50,9 +66,13 @@ class Room(models.Model):
         default=ROOM_TYPE[0][0],
     )
     number = models.IntegerField(
-        min_num=100,
-        max_num=500
+        default=100,
+        validators=[
+            MaxValueValidator(500),
+            MinValueValidator(100)
+        ]
     )
+
     location = models.CharField(
         max_length=50,
         choices=LOCATION,
@@ -60,19 +80,8 @@ class Room(models.Model):
         )
 
     booking = models.ForeignKey(Booking, on_delete=models.CASCADE)
+
     def __str__(self):
         return f"{self.get_room_display()} on {self.date}"
 
-class User(models.Model):
-    username = models.CharField(max_length=25)
-    password = models.CharField(max_length=50)
-    email = models.TextField()
-    first_name = models.TextField()
-    last_name = models.TextField()
 
-
-class Booking(models.Model):
-    cruises = models.OneToManyField(cruise)
-    users = models.OneToManyField(user)
-    destinations = models.ManyToManyField(destination)
-    price = models.IntegerField()
