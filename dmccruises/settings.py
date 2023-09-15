@@ -76,8 +76,8 @@ WSGI_APPLICATION = 'dmccruises.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.psql',
-        'NAME': 'dmc-cruises',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dmccruises',
     }
 }
 
