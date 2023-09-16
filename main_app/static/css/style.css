@@ -6,6 +6,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
   }
   
+  nav {
+    color: #fff;
+    background-color:deepskyblue;
+}
+
   main {
     flex: 1 0 auto;
   }
