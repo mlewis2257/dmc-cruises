@@ -80,6 +80,8 @@ WSGI_APPLICATION = 'dmccruises.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# To use Neon with Django, you have to create a Project on Neon and specify the project connection settings in your settings.py in the same way as for standalone Postgres.
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
