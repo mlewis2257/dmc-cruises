@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .forms import BookingForm
-from .models import Cruise, Destination, Booking
+from .models import Cruise, Destination, Booking, User
 
 # Create your views here.
 
@@ -75,3 +75,23 @@ class BookingList(ListView):
 
 class BookingDetail(DetailView):
     model = Booking
+
+
+def assoc_cruise(request, cruise_id, destination_id):
+    Cruise.objects.get(id=cruise_id).destinations.add(destination_id)
+    return redirect('detail', cruise_id=cruise_id)
+
+
+def assoc_cruise(request, cruise_id, destination_id):
+    Cruise.objects.get(id=cruise_id).destinations.add(destination_id)
+    return redirect('detail', cruise_id=cruise_id)
+
+
+def assoc_user(request, booking_id, user_id):
+    User.objects.get(id=user_id).booking.add(booking_id)
+    return redirect('bookings/index', user_id=user_id)
+
+
+def unassoc_user(request, booking_id, user_id):
+    User.objects.get(id=user_id).booking.remove(booking_id)
+    return redirect('bookings/index', user_id=user_id)
