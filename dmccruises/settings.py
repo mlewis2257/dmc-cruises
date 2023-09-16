@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import environ
+import os
+
+environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,14 +87,14 @@ DATABASES = {
 }
 
 DATABASES = {
-  ‘default’: {
-    ‘ENGINE’: ‘django.db.backends.postgresql’,
-    ‘NAME’: ‘dmccruises’,
-    ‘USER’: ‘mlewis2257’,
-    ‘PASSWORD’: ‘<% PASSWORD %>’,
-    ‘HOST’: ‘ep-wandering-rice-50314238.us-west-2.aws.neon.tech’,
-    ‘PORT’: ‘5432’,
-  }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dmccruises',
+        'USER': os.environ['DB_USER'],
+        'PASSWORD': os.environ['DB_PW'],
+        'HOST': os.environ['DB_HOST'],
+        'PORT': '5432',
+    }
 }
 
 
