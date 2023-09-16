@@ -16,6 +16,6 @@ urlpatterns = [
     path('cruises/', views.cruises_index, name='cruises'),
     path('cruises/<int:cruise_id>/', views.cruise_detail, name='cruise_detail'),
     path('cruises/<int:cruise_id>/assoc_destination/<int:destination_id>/', views.assoc_destination, name='assoc_destination'),
-    path('destinations/', views.destinations_index, name='destinations')
+    path('destinations/', views.destinations_index, name='destinations'),
     path('destinations/<int:destination_id>/', views.destinations_detail, name='destinations_detail'),
 ]   
