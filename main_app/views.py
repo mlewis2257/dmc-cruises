@@ -82,8 +82,8 @@ def assoc_cruise(request, cruise_id, destination_id):
     return redirect('detail', cruise_id=cruise_id)
 
 
-def assoc_cruise(request, cruise_id, destination_id):
-    Cruise.objects.get(id=cruise_id).destinations.add(destination_id)
+def unassoc_cruise(request, cruise_id, destination_id):
+    Cruise.objects.get(id=cruise_id).destinations.remove(destination_id)
     return redirect('detail', cruise_id=cruise_id)
 
 
