@@ -30,7 +30,7 @@ def destinations_index(request):
     })
 
 
-def destination_detail(request, destination_id):
+def destinations_detail(request, destination_id):
     destination = Destination.objects.get(id=destination_id)
     return render(request, 'destinations/detail.html', {'destination': destination})
 
