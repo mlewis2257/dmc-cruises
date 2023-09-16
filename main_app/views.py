@@ -87,6 +87,11 @@ def unassoc_cruise(request, cruise_id, destination_id):
     return redirect('detail', cruise_id=cruise_id)
 
 
+def assoc_destination(request, destination_id, cruise_id):
+    Destination.objects.get(id=destination_id).destinations.add(cruise_id)
+    return redirect('detail', destination_id=destination_id)
+
+
 def assoc_user(request, booking_id, user_id):
     User.objects.get(id=user_id).booking.add(booking_id)
     return redirect('bookings/index', user_id=user_id)
