@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 from django.urls import reverse
 from django.db.models import IntegerField
@@ -27,11 +28,10 @@ class Destination(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def get_absolute_url(self):
         return reverse('destinations_detail', kwargs={'pk': self.id})
 
-    
 
 class Cruise(models.Model):
     name = models.CharField(max_length=100)
@@ -45,19 +45,22 @@ class Cruise(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'cruise_id': self.id})
 
+
 class User(models.Model):
     username = models.CharField(max_length=25)
     password = models.CharField(max_length=50)
     email = models.TextField()
     first_name = models.TextField()
     last_name = models.TextField()
-    
+
+
 class Booking(models.Model):
     destinations = models.ManyToManyField(Destination)
     price = models.IntegerField()
-
+    date = models.DateField(("Date"), default=datetime.date.today)
     cruise = models.ForeignKey(Cruise, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
 class Room(models.Model):
     type = models.CharField(
@@ -77,11 +80,9 @@ class Room(models.Model):
         max_length=50,
         choices=LOCATION,
         default=LOCATION[0][0]
-        )
+    )
 
     booking = models.ForeignKey(Booking, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.get_room_display()} on {self.date}"
-
-
