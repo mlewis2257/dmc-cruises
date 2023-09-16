@@ -3,6 +3,7 @@ from django.db import models
 from django.urls import reverse
 from django.db.models import IntegerField
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -27,7 +28,7 @@ class Destination(models.Model):
     location = models.CharField(max_length=250)
 
     def __str__(self):
-        return self.name
+        return self.location
 
     def get_absolute_url(self):
         return reverse('destinations_detail', kwargs={'pk': self.id})

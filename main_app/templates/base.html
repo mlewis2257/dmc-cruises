@@ -20,10 +20,13 @@
                     <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;</a></li>
                 </ul>
                 <ul class="left">
-                  <li><a href="{% url 'cruises' %}">Find a Cruise</a></li>
-                   <li><a href="{% url 'destinations' %}">Pick a Destination</a></li>
+                  <li><a href="{% url 'cruises' %}">Browse Cruise Ships</a></li>
+                   <li><a href="{% url 'destinations' %}">Browse Destinations</a></li>
+                   {% if user.is_authenticated %}
                   <li><a href="{% url 'index' %}">View All My Bookings</a></li>
-                  <li><a href=>Login in</a></li>
+                  {% else %}
+                  <li><a href="{% url 'login' %}">Log In</a></li>
+                  {% endif %}
                 </ul>
             </div>
         </nav>

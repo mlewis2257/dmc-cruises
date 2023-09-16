@@ -3,6 +3,7 @@
 
 <h1>All Bookings</h1>
 
+<p><a href="{% url 'bookings_create' %}">Add Booking</a></p>
 {% for booking in bookings %}
   <a href="{% url 'detail' booking.id %}">
     <div class="card">
@@ -11,7 +12,6 @@
         <p>Destinations: {{ booking.destinations }}</p>
         <p>Date: {{ booking.date|linebreaks }}</p>
       </div>
-    </div>
   </a>
 {% endfor %}
 
