@@ -26,5 +26,5 @@ urlpatterns = [
          views.assoc_destination, name='assoc_destination'),
     path('destinations/', views.destinations_index, name='destinations'),
     path('destinations/<int:destination_id>/',
-         views.destinations_detail, name='destinations_detail'),
+         views.destination_detail, name='destination_detail'),
 ]

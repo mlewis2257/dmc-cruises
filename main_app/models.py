@@ -39,11 +39,8 @@ class Cruise(models.Model):
     sale_from = models.CharField(max_length=500)
     destinations = models.ManyToManyField(Destination)
 
-    def __str__(self):
-        return f'{self.name} ({self.id})'
-
-    def get_absolute_url(self):
-        return reverse('detail', kwargs={'cruise_id': self.id})
+    # def get_absolute_url(self):
+    #     return reverse('detail', kwargs={'cruise_id': self.id})
 
 
 class User(models.Model):
@@ -61,6 +58,11 @@ class Booking(models.Model):
     cruise = models.ForeignKey(Cruise, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f'{self.name} ({self.id})'
+
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'booking_id': self.id})
 
 class Room(models.Model):
     type = models.CharField(
