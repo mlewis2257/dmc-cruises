@@ -11,6 +11,21 @@ def home(request):
     return render(request, 'home.html')
 
 
+def bookings_index(request):
+    bookings = Booking.objects.all()
+    return render(request, 'bookings/index.html', {'bookings': bookings})
+
+
+def bookings_detail(request, booking_id):
+    booking = Booking.objects.get(id=booking_id)
+    id_list = booking.cruises.all().values_list('id')
+    add_room_form = AddRoomForm()
+    return render(request, 'bookings/detail.html', {
+        'booking': booking,
+        'add_room_form': add_room_form,
+    })
+
+
 def cruises_index(request):
     cruises = Cruise.objects.all()
     return render(request, 'cruises/index.html', {
@@ -28,30 +43,6 @@ def destinations_index(request):
     return render(request, 'destinations/index.html', {
         'destinations': destinations
     })
-
-
-def destinations_detail(request, destination_id):
-    destination = Destination.objects.get(id=destination_id)
-    return render(request, 'destinations/detail.html', {'destination': destination})
-
-
-def bookings_index(request):
-    bookings = Booking.objects.all()
-    return render(request, 'bookings/index.html', {'bookings': bookings})
-
-
-def bookings_detail(request, booking_id):
-    booking = Booking.objects.get(id=booking_id)
-    return render(request, 'bookings/detail.html', {'booking': booking})
-
-
-def add_room(request, booking_id):
-    form = BookingForm(request.POST)
-    if form.is_valid():
-        new_room = form.save(commit=False)
-        new_room.booking_id = booking_id
-        new_room.save()
-    return redirect('bookings/detail', booking_id=booking_id)
 
 
 class BookingCreate(CreateView):
@@ -75,6 +66,20 @@ class BookingList(ListView):
 
 class BookingDetail(DetailView):
     model = Booking
+
+
+def destination_detail(request, destination_id):
+    destination = Destination.objects.get(id=destination_id)
+    return render(request, 'destinations/detail.html', {'destination': destination})
+
+
+def add_room(request, booking_id):
+    form = AddRoomForm(request.POST)
+    if form.is_valid():
+        new_room = form.save(commit=False)
+        new_room.booking_id = booking_id
+        new_room.save()
+    return redirect('detail', booking_id=booking_id)
 
 
 def assoc_cruise(request, cruise_id, destination_id):
