@@ -1,13 +1,11 @@
+from django.contrib import admin
 from django.urls import path, include
 from . import views
-from django.contrib import admin
 
 
 urlpatterns = [
-     path('admin/', admin.site.urls),
-     path('', include('main_app.urls')),
-     path('accounts/', include('django.contrib.auth.urls')),
      path('', views.home, name='home'),
+     path('accounts/signup/', views.signup, name='signup'),
      path('bookings/', views.bookings_index, name='index'),
      path('bookings/<int:booking_id>/', views.bookings_detail, name='detail'),
      path('bookings/create/', views.BookingCreate.as_view(), name='bookings_create'),

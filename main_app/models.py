@@ -40,16 +40,19 @@ class Cruise(models.Model):
     sale_from = models.CharField(max_length=500)
     destinations = models.ManyToManyField(Destination)
 
+    def __str__(self):
+        return self.name
+
     # def get_absolute_url(self):
     #     return reverse('detail', kwargs={'cruise_id': self.id})
 
 
-class User(models.Model):
-    username = models.CharField(max_length=25)
-    password = models.CharField(max_length=50)
-    email = models.TextField()
-    first_name = models.TextField()
-    last_name = models.TextField()
+# class User(models.Model):
+#     username = models.CharField(max_length=25)
+#     password = models.CharField(max_length=50)
+#     email = models.TextField()
+#     first_name = models.TextField()
+#     last_name = models.TextField()
 
 
 class Booking(models.Model):
