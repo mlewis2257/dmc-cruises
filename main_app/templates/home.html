@@ -1,10 +1,54 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Home</h1>
+<style>
 
-<div id="image_wrapper">
-  <img id="cruise_home" src="../../static/images/boat.png">
+  #image-wrapper {
+    height: 300px;
+    background-size: cover;
+    width: 100%;
+    background-image:url("../../static/images/ship.png");
+  }
+
+  .row {
+    font-style: oblique;
+    background-color: lightblue;
+    font-family: math;
+  }
+
+  #cruise_home {
+    border-style: groove;
+    width: 24%;
+  }
+
+</style>
+<div class="grid text-center" style="--bs-columns: 3;">
+  <div></div>
 </div>
+
+<div id="image-wrapper">
+</div>
+
+<div class="row">
+  <div class="col-sm-6 order-md-2">
+    <h4>EXPLORE ALL THE FUN ABOARD DMC CRUISES</h4> 
+    You don’t have to break the bank for an incredible vacation. Cruise from a port near you to top-rated vacation destinations in the tropics and beyond. No matter where in the world you’re sailing from, you’ll find plenty of deals on epic itineraries sailing right from your backyard.
+  </div>
+</div>
+
+
+<div class="row my-custome-row Justify-content-center align-items-center">
+  <div class="col-sm-4 order-md-2"><div class="p-3 border bg-light"> 
+    <img id="cruise_home" src="../../static/images/weekened.png">
+    <img id="cruise_home" src="../../static/images/alaska.png">
+    <img id="cruise_home" src="../../static/images/Europe.png">
+    <img id="cruise_home" src="../../static/images/caribbean.png">
+  </div></div>
+  <div class="col-sm-4 order-md-3"><div class="p-3 border bg-light"></div></div>
+</div>
+
+<h6>THE MOST EXCITING CRUISE DESTINATIONS</h6>
+<h5>AND AWARD-WINNING SHIPS</h5>
+<h7>Taxes, Fees and Port Expenses range from $74.49 to $426.86, and are assessed on a per guest basis for all guests according to the itinerary.</h7>
 
 {% endblock %}
