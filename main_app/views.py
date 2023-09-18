@@ -3,7 +3,9 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .forms import BookingForm
 from .models import Cruise, Destination, Booking, User
-
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponseServerError
 # Create your views here.
 
 
@@ -17,7 +19,7 @@ def bookings_index(request):
 
 def bookings_detail(request, booking_id):
     booking = Booking.objects.get(id=booking_id)
-    id_list = booking.cruises.all().values_list('id')
+    # id_list = booking.cruise.all().values_list('id')
     add_room_form = AddRoomForm()
     return render(request, 'bookings/detail.html', {
         'booking': booking,
@@ -44,12 +46,22 @@ def destinations_index(request):
 
 class BookingCreate(CreateView):
     model = Booking
-    fields = '__all__'
+    form_class = BookingForm
+    def form_valid(self, form):
+        try: 
+            print(type(self.request.user))
+            form.instance.user = self.request.user
+            return super().form_valid(form)
+        except Exception as e:
+            return HttpResponseServerError(e)
 
 
 class BookingUpdate(UpdateView):
     model = Booking
     fields = '__all__'
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 
 class BookingDelete(DeleteView):
@@ -103,3 +115,18 @@ def assoc_user(request, booking_id, user_id):
 def unassoc_user(request, booking_id, user_id):
     User.objects.get(id=user_id).booking.remove(booking_id)
     return redirect('bookings/index', user_id=user_id)
+
+
+def signup(request):
+  error_message = ''
+  if request.method == 'POST':
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      user = form.save()
+      login(request, user)
+      return redirect('index')
+    else:
+      error_message = 'Invalid sign up - try again'
+  form = UserCreationForm()
+  context = {'form': form, 'error_message': error_message}
+  return render(request, 'registration/signup.html', context)
