@@ -21,6 +21,8 @@
                   <li>
                     <a href="{% url 'home' %}" class="left brand-logo"><img style="width:63px;" src="../../static/images/logo.png"></a>
                   </li>
+                </ul>
+                <ul class="right">
                   <li><a href="{% url 'cruises' %}">Browse Cruise Ships</a></li>
                   <li><a href="{% url 'destinations' %}">Browse Destinations</a></li>
                   {% if user.is_authenticated %}

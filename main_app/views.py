@@ -71,7 +71,7 @@ class BookingUpdate(UpdateView):
 
 class BookingDelete(DeleteView):
     model = Booking
-    success_url = '/cruises'
+    success_url = '/bookings'
 
 
 class BookingList(ListView):
