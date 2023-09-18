@@ -22,8 +22,8 @@
         <div class="card">
           <div class="card-content">
             <span class="card-title">
-              <span >{{ destination.location }}</span> {{ destination.excursions }}
-            </span>
+              <span> {{ destination.location }} </span>
+              <span> {{ destination.excursions }} </span>
           </div>
           <div class="card-action">
             <form action="{% url 'assoc_destination' cruise.id destination.id %}" method="POST">
