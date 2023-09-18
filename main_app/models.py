@@ -37,14 +37,14 @@ class Destination(models.Model):
 class Cruise(models.Model):
     name = models.CharField(max_length=100)
     duration = models.IntegerField()
-    sale_from = models.CharField(max_length=500)
+    sail_from = models.CharField(max_length=500)
     destinations = models.ManyToManyField(Destination)
 
     def __str__(self):
         return self.name
 
-    # def get_absolute_url(self):
-    #     return reverse('detail', kwargs={'cruise_id': self.id})
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'cruise_id': self.id})
 
 
 # class User(models.Model):

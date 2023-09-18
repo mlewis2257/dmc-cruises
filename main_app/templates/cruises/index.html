@@ -4,11 +4,10 @@
 <h1>Cruise List</h1>
 
 {% for cruise in cruises %}
-  <a href="{% url 'cruises' %}">
+  <a href="{% url 'cruise_detail' cruise.id %}">
     <div class="card">
         <div class="card-content">
             <span class="card-title">{{ cruise.name }}</span>
-            <p>Destinations: {{ cruise.destinations }}</p>
         </div>
     </div>
   </a>
