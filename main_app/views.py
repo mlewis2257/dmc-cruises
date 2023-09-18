@@ -37,7 +37,11 @@ def cruises_index(request):
 
 def cruise_detail(request, cruise_id):
     cruise = Cruise.objects.get(id=cruise_id)
-    return render(request, 'cruises/detail.html', {'cruise': cruise})
+    id_list = cruise.destinations.all().values_list('id')
+    return render(request, 'cruises/detail.html', {
+        'cruise': cruise,
+        # 'destinations': destinations
+        })
 
 
 def destinations_index(request):
@@ -71,7 +75,7 @@ class BookingUpdate(UpdateView):
 
 class BookingDelete(DeleteView):
     model = Booking
-    success_url = '/cruises'
+    success_url = '/bookings'
 
 
 class BookingList(ListView):
@@ -106,9 +110,9 @@ def unassoc_cruise(request, cruise_id, destination_id):
     return redirect('detail', cruise_id=cruise_id)
 
 
-def assoc_destination(request, destination_id, cruise_id):
-    Destination.objects.get(id=destination_id).destinations.add(cruise_id)
-    return redirect('detail', destination_id=destination_id)
+def assoc_destination(request, cruise_id, destination_id):
+    Cruise.objects.get(id=cruise_id).destinations.add(destination_id)
+    return redirect('cruise_detail', cruise_id=cruise_id)
 
 
 def assoc_user(request, booking_id, user_id):
