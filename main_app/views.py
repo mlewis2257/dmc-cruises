@@ -12,6 +12,7 @@ from django.http import HttpResponseServerError
 def home(request):
     return render(request, 'home.html')
 
+
 def bookings_index(request):
     bookings = Booking.objects.all()
     return render(request, 'bookings/index.html', {'bookings': bookings})
@@ -23,8 +24,9 @@ def bookings_detail(request, booking_id):
     add_room_form = AddRoomForm()
     return render(request, 'bookings/detail.html', {
         'booking': booking,
-        'add_room_form':add_room_form,
-        })
+        'add_room_form': add_room_form,
+    })
+
 
 def cruises_index(request):
     cruises = Cruise.objects.all()
@@ -43,6 +45,7 @@ def destinations_index(request):
     return render(request, 'destinations/index.html', {
         'destinations': destinations
     })
+
 
 class BookingCreate(CreateView):
     model = Booking
@@ -76,6 +79,7 @@ class BookingList(ListView):
 class BookingDetail(DetailView):
     model = Booking
 
+
 def destination_detail(request, destination_id):
     destination = Destination.objects.get(id=destination_id)
     return render(request, 'destinations/detail.html', {'destination': destination})
@@ -88,8 +92,6 @@ def add_room(request, booking_id):
         new_room.booking_id = booking_id
         new_room.save()
     return redirect('detail', booking_id=booking_id)
-
-
 
 
 def assoc_cruise(request, cruise_id, destination_id):
