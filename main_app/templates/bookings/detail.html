@@ -69,15 +69,14 @@
       <h5>No Upcoming Cruises</h5>
     {% endif %}
   </div>
-  <!-- Available toys will come after this line -->
   <div class="col s6">
     <h3>Available Cruises</h3>
-    {% if cruises.count %}
-      {% for cruise in cruises.all %}
+    {% if cruise.count %}
+      {% for cruise in cruise.all %}
         <div class="card">
           <div class="card-content">
             <span class="card-title">
-              Sailing to <span {{ cruise.destination }}</span>
+              Sailing to <span>{{ cruise.destination }}</span>
             </span>
           </div>
           <div class="card-action">
