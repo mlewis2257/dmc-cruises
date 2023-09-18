@@ -27,7 +27,7 @@ class Destination(models.Model):
     location = models.CharField(max_length=250)
 
     def __str__(self):
-        return self.name
+        return self.location
 
     def get_absolute_url(self):
         return reverse('destinations_detail', kwargs={'pk': self.id})
@@ -63,6 +63,7 @@ class Booking(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'booking_id': self.id})
+
 
 class Room(models.Model):
     type = models.CharField(
