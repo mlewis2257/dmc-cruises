@@ -68,6 +68,7 @@ class Booking(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'booking_id': self.id})
 
+
 class Room(models.Model):
     type = models.CharField(
         max_length=50,
