@@ -1,9 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Destination Details</h1>
+<h1>{{ destination.location }} Details</h1>
 
 <div class="wrapper">
-  <h2>Destinations</h2>
+  <h2>Description</h2>
 </div>
-
+<div>
+  Available Excursions:
+  {% for excursion in destination.excursions.all %}
+    <h3>{{ excursion.activity }}</h3>
+    <h3>{{ excursion.description }}</h3>
+</div>
+  {% endfor %}
 {% endblock %}

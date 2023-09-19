@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .forms import AddRoomForm, BookingForm
-from .models import Cruise, Destination, Booking, User, Excursion
+from .models import Cruise, Destination, Booking, User, Excursion, Room
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseServerError
@@ -110,6 +110,11 @@ def add_room(request, booking_id):
         new_room.booking_id = booking_id
         new_room.save()
     return redirect('detail', booking_id=booking_id)
+
+class RoomDelete(DeleteView):
+    model = Room
+    success_url = '/detail'
+
 
 
 def assoc_cruise(request, cruise_id, destination_id):

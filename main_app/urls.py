@@ -13,6 +13,8 @@ urlpatterns = [
           views.BookingUpdate.as_view(), name='bookings_update'),
      path('bookings/<int:pk>/delete/',
           views.BookingDelete.as_view(), name='bookings_delete'),
+     path('bookings/<int:pk>/delete/',
+          views.RoomDelete.as_view(), name='room_delete'),
      path('bookings/<int:booking_id>/add_room/',
           views.add_room, name='add_room'),
      path('bookings/<int:booking_id>/assoc_cruise/<int:cruise_id>/',
