@@ -40,26 +40,6 @@
       </div>
     </div>
   </div>
-  <div class="col s6">
-    <h3>Available Destinations</h3>
-      {% for destination in cruise.destinations.all %}
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title">
-              <span> {{ destination.location }} </span>
-              {% for excursion in excursions %}
-              <span> {{ excursion }} </span>
-              {% endfor %}
-          </div>
-          <div class="card-action">
-            <form action="{% url 'assoc_destination' cruise.id destination.id %}" method="POST">
-              {% csrf_token %}
-              <input type="submit" value="add" class="btn"/>
-            </form>
-          </div>
-        </div>
-      {% endfor %}
-  </div>
   <div class=“row”>
     <div class=“col s6">
       <h3>{{ cruise.name }} Destinations</h3>
@@ -68,8 +48,7 @@
       <div class=“card”>
         <div class=“card-content”>
           <span class=“card-title”>
-            <span{{ destination.location }}“>{{ destination.excursion }}</span>
-            {{destination.location }}
+            <a href="{% url 'destination_detail' destination.id %}"><span> {{ destination.location }}</span></a>
           </span>
         </div>
       </div>
