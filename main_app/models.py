@@ -33,6 +33,7 @@ class Destination(models.Model):
     excursions = models.ManyToManyField(Excursion)
     location = models.CharField(max_length=250)
     description = models.TextField(max_length=2000, default="")
+    picturepath = models.CharField(max_length=500, default="")
 
     def __str__(self):
         return self.location
@@ -46,6 +47,7 @@ class Cruise(models.Model):
     duration = models.IntegerField()
     sail_from = models.CharField(max_length=500)
     destinations = models.ManyToManyField(Destination)
+    picturepath = models.CharField(max_length=500, default="")
 
     def __str__(self):
         return self.name
