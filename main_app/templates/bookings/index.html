@@ -14,5 +14,26 @@
       </div>
   </a>
 {% endfor %}
-
+<div class="col s6">
+  <h3>Available Cruises</h3>
+  {% if cruise.count %}
+    {% for cruise in cruise.all %}
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            Sailing to <span>{{ cruise.destination }}</span>
+          </span>
+        </div>
+        <div class="card-action">
+          <form action="{% url 'assoc_cruise' booking.id cruise.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn">Add</button>
+          </form>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <h5>{{booking.user}} Already Has All Cruises Booked! Bon Voyage!</h5>
+  {% endif %}
+</div>
 {% endblock %}

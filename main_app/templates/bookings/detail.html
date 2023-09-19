@@ -37,6 +37,11 @@
             <td>{{room.get_type_display}}</td>
             <td>{{room.cabin_number}}</td>
             <td>{{room.get_location_display}}</td>
+            <td><form action="{% url 'delete_room' room.id %}" method="POST">
+              <input type="submit" value="Delete Room" class="btn">
+              {% csrf_token %}
+              </form>
+            </td>
           </tr>
         {% endfor %}
       </tbody>
@@ -47,50 +52,21 @@
 <hr>
 <div class="row">
   <div class="col s6">
-    <h3>{{ cruise.name }}s Destinations</h3>
-    {% if cruise.destinations.count %}
-      {% for destination in cruise.destinations.all %}
+    <h3>{{ booking.cruise.name }}s Destinations</h3>
+      {% for destination in booking.cruise.destinations.all %}
         <div class="card">
           <div class="card-content">
             <span class="card-title">
-              Sails to {{ cruise.destination }}
-            </span>
-            <p>Destination Location: {{ destination.locations }}</p>
-            <p>Your Excursions: {{ destination.excursions }}</p>
-          </div>
-          <div class="card-action">
-            <form action="{% url 'unassoc_cruise' booking.id cruise.id %}" method="POST">
-              {% csrf_token %}
-              <button type="submit" class="btn">Remove</button>
-            </form>
-          </div>
-        </div>
+              Sails to {{ destination.location }}
+              {% for excursion in destination.excursions.all %}  
+                <p>Your Excursions: {{ excursion.activity }}</p>
+              {% endfor %}
       {% endfor %}
-    {% else %}
-      <h5>No Upcoming Cruises</h5>
-    {% endif %}
-  </div>
-  <div class="col s6">
-    <h3>Available Cruises</h3>
-    {% if cruise.count %}
-      {% for cruise in cruise.all %}
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title">
-              Sailing to <span>{{ cruise.destination }}</span>
             </span>
           </div>
-          <div class="card-action">
-            <form action="{% url 'assoc_cruise' booking.id cruise.id %}" method="POST">
-              {% csrf_token %}
-              <button type="submit" class="btn">Add</button>
-            </form>
+        </div>
           </div>
         </div>
-      {% endfor %}
-    {% else %}
-      <h5>{{booking.user}} Already Has All Cruises Booked! Bon Voyage!</h5>
-    {% endif %}
   </div>
 </div>
   
