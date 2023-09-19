@@ -19,13 +19,56 @@
     margin: 0;
     padding: 24px;
 }
+
+h6 {
+  font-family: "ProximaNova-Regular",Arial,sans-serif;
+  font-size: 1rem;
+  line-height: 150%;
+  margin:0;
+  padding: 25px;
+}
+
+
+h5 {
+font-family: "Kapra-Optimized",Impact,"Arial Narrow",Arial,sans-serif;
+color:darkblue;
+font-size: 3rem;
+text-transform: uppercase;
+line-height: 110%;
+margin: 0;
+padding: 11px;
+}
+
+h2 {
+  font-family: "ProximaNova-Regular",Arial,sans-serif;
+  color:darkblue;
+  font-size: 1rem;
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+  margin:28px 2px -3px;
+  padding: 11px;
+}
+
+#cruise_home {
+  border-style: groove;
+  border-color: blue;
+  width: 24.6%;
+  margin:0;
+  padding:7px;
+}
 </style>
 
 <div id="image-wrapper">
 </div>
 
-<h1>Available Destinations</h1>
+<div class="row">
+  <div class="col-sm-6 order-md-2">
+    <h5>DISCOVER YOUR OWN</h5> 
+    <h6>The excursions and guided tours are designed to take your getaway to the next level — from swimming in the clear blue water with excotic animals to ATV's with friends or family, These experiences will be life changing. Ready to revisit that bucket list? Explore the possibilities for shore excursions on your next DMC cruise below.</h6>
+  </div>
+</div>
 
+<h1>Available Destinations</h1>
 {% for destination in destinations %}
   <a href="{% url 'destination_detail' destination.id %}">
     <div class="card">
@@ -35,5 +78,18 @@
     </div>
   </a>
 {% endfor %}
+
+<h1>Get a Taste of The Adventures on Land</h1>
+<h2>Want to share your Adventures? Mention @DMCRUISES to be featured.</h2>
+
+<div class="row">
+  <div class="col-4">
+    <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+      <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="../../static/images/girls.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="../../static/images/adventure.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/pig.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/kids.png"></a>
+    </div>
+  </div>
 
 {% endblock %}
