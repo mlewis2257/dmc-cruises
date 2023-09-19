@@ -6,6 +6,7 @@ from .models import Cruise, Destination, Booking, User, Excursion, Room
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseServerError
+from django.urls import reverse
 # Create your views here.
 
 
@@ -112,7 +113,8 @@ def add_room(request, booking_id):
 
 class RoomDelete(DeleteView):
     model = Room
-    success_url = '/bookings'
+    def get_success_url(self):
+        return reverse('detail', kwargs={'booking_id': self.object.booking.id})
 
 
 def assoc_cruise(request, cruise_id, destination_id):

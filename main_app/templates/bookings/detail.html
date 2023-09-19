@@ -8,8 +8,11 @@
     <div class="card">
         <div class="card-content">
           <span class="card-title">{{ booking.cruise }}</span>
-          <p>Destinations: {{ booking.destinations }}</p>
-          <p>Date: {{ booking.date|linebreaks }}</p>
+          {% for destination in booking.cruise.destinations.all %}
+          <p>Destinations: {{ destination.location }}</p>
+          {% endfor %}
+          <p>Date: {{ booking.date }}</p>
+          <p>Duration: {{booking.cruise.duration}} days</p>
           <p>Price: ${{ booking.price }}</p>
           <p>Sails From: {{booking.cruise.sail_from}} </p>
         </div>

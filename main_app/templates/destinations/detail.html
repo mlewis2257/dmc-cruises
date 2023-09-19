@@ -3,13 +3,14 @@
 <h1>{{ destination.location }} Details</h1>
 
 <div class="wrapper">
-  <h2>Description</h2>
+  <p>{{ destination.description }}</p>
 </div>
 <div>
-  Available Excursions:
+  <h2>Available Excursions:</h2>
   {% for excursion in destination.excursions.all %}
     <h3>{{ excursion.activity }}</h3>
     <h3>{{ excursion.description }}</h3>
 </div>
+
   {% endfor %}
 {% endblock %}
