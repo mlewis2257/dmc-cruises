@@ -32,7 +32,7 @@ class Excursion(models.Model):
 class Destination(models.Model):
     excursions = models.ManyToManyField(Excursion)
     location = models.CharField(max_length=250)
-    description = models.TextField(max_length=2000, default="")
+    description = models.TextField(max_length=3000, default="")
     picturepath = models.CharField(max_length=500, default="")
 
     def __str__(self):
