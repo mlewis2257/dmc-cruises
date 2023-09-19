@@ -8,6 +8,7 @@ class BookingForm(ModelForm):
         # fields = ['type', 'number', 'location']
         exclude = ['user']
 
+
 class AddRoomForm(ModelForm):
     class Meta:
         model = Room
