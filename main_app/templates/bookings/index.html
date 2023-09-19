@@ -9,8 +9,8 @@
     <div class="card">
       <div class="card-content">
         <span class="card-title">{{ booking.cruise }}</span>
-        <p>Destinations: {{ booking.destinations }}</p>
-        <p>Date: {{ booking.date|linebreaks }}</p>
+        <p>Destination: {{ booking.destinations_str }}</p>
+        <p>Date: {{ booking.date }}</p>
       </div>
   </a>
 {% endfor %}

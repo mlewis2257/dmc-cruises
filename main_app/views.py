@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .forms import AddRoomForm, BookingForm
-from .models import Cruise, Destination, Booking, User
+from .models import Cruise, Destination, Booking, User, Excursion
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseServerError
@@ -12,14 +12,23 @@ from django.http import HttpResponseServerError
 def home(request):
     return render(request, 'home.html')
 
+def excursions_index(request):
+    excursions = Excursion.objects.all()
+    return render(request, 'destinations/detail.html', {'excursions': excursions})
 
 def bookings_index(request):
     bookings = Booking.objects.all()
+    
+    # Add destinations to each booking
+    for booking in bookings:
+        booking.destinations_str = ", ".join([destination.location for destination in booking.cruise.destinations.all()])
+    
     return render(request, 'bookings/index.html', {'bookings': bookings})
 
 
 def bookings_detail(request, booking_id):
     booking = Booking.objects.get(id=booking_id)
+    print(booking)
     # id_list = booking.cruise.all().values_list('id')
     add_room_form = AddRoomForm()
     return render(request, 'bookings/detail.html', {
@@ -37,10 +46,12 @@ def cruises_index(request):
 
 def cruise_detail(request, cruise_id):
     cruise = Cruise.objects.get(id=cruise_id)
-    id_list = cruise.destinations.all().values_list('id')
+    destinations = cruise.destinations.all()
+    excursions = Excursion.objects.filter(destination__in=destinations)
+    print(excursions)
     return render(request, 'cruises/detail.html', {
         'cruise': cruise,
-        # 'destinations': destinations
+        'excursions': excursions
         })
 
 
@@ -57,7 +68,7 @@ class BookingCreate(CreateView):
 
     def form_valid(self, form):
         try:
-            print(type(self.request.user))
+            print(form)
             form.instance.user = self.request.user
             return super().form_valid(form)
         except Exception as e:
@@ -93,6 +104,7 @@ def destination_detail(request, destination_id):
 
 def add_room(request, booking_id):
     form = AddRoomForm(request.POST)
+    print('hello')
     if form.is_valid():
         new_room = form.save(commit=False)
         new_room.booking_id = booking_id

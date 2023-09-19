@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-ROOM_TYPE = (
+TYPE = (
     ('I', 'Interior'),
     ('O', 'Ocean View'),
     ('B', 'Balcony'),
@@ -26,6 +26,8 @@ class Excursion(models.Model):
     activity = models.CharField(max_length=500)
     description = models.TextField(max_length=2000, default="")
 
+    def __str__(self):
+        return self.activity
 
 class Destination(models.Model):
     excursions = models.ManyToManyField(Excursion)
@@ -61,14 +63,13 @@ class Cruise(models.Model):
 
 
 class Booking(models.Model):
-    destinations = models.ManyToManyField(Destination)
     price = models.IntegerField()
     date = models.DateField(("Date"), default=datetime.date.today)
     cruise = models.ForeignKey(Cruise, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.name} ({self.id})'
+        return f'{self.user} ({self.id})'
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'booking_id': self.id})
@@ -77,10 +78,10 @@ class Booking(models.Model):
 class Room(models.Model):
     type = models.CharField(
         max_length=50,
-        choices=ROOM_TYPE,
-        default=ROOM_TYPE[0][0],
+        choices=TYPE,
+        default=TYPE[0][0],
     )
-    number = models.IntegerField(
+    cabin_number = models.IntegerField(
         default=100,
         validators=[
             MaxValueValidator(500),
@@ -97,4 +98,4 @@ class Room(models.Model):
     booking = models.ForeignKey(Booking, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.get_room_display()} on {self.date}"
+        return f"{self.get_type_display()} Cabin Number: {self.cabin_number}"
