@@ -104,7 +104,6 @@ def destination_detail(request, destination_id):
 
 def add_room(request, booking_id):
     form = AddRoomForm(request.POST)
-    print('hello')
     if form.is_valid():
         new_room = form.save(commit=False)
         new_room.booking_id = booking_id
@@ -113,8 +112,7 @@ def add_room(request, booking_id):
 
 class RoomDelete(DeleteView):
     model = Room
-    success_url = '/detail'
-
+    success_url = '/bookings'
 
 
 def assoc_cruise(request, cruise_id, destination_id):

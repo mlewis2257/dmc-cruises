@@ -37,7 +37,11 @@
             <td>{{room.get_type_display}}</td>
             <td>{{room.cabin_number}}</td>
             <td>{{room.get_location_display}}</td>
-            <td><a href="{% url 'room_delete' booking.id %}">Delete</a></td>
+            <td><form action="{% url 'delete_room' room.id %}" method="POST">
+              <input type="submit" value="Delete Room" class="btn">
+              {% csrf_token %}
+              </form>
+            </td>
           </tr>
         {% endfor %}
       </tbody>
