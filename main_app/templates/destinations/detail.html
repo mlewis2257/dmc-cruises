@@ -1,5 +1,18 @@
 {% extends 'base.html' %} {% block content %}
 
+<style>
+  .eimg {
+    border-radius: 8px;
+    height: 500px;
+    width: 750px;
+  }
+
+  .container-fluid {
+    padding: 40px;
+}
+
+</style>
+
 <h1>{{ destination.location }} Details</h1>
 
 <div class="wrapper">
@@ -9,7 +22,8 @@
   <h2>Available Excursions:</h2>
   {% for excursion in destination.excursions.all %}
     <h3>{{ excursion.activity }}</h3>
-    <h3>{{ excursion.description }}</h3>
+    <p>{{ excursion.description }}</p>
+    <h3><img class="eimg" src="{{ excursion.picturepath }}"></h3>
   </div>
 
   {% endfor %}
