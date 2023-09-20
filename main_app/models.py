@@ -25,7 +25,8 @@ LOCATION = (
 class Excursion(models.Model):
     activity = models.CharField(max_length=500)
     description = models.TextField(max_length=2000, default="")
-
+    picturepath = models.CharField(max_length=500, default="")
+    
     def __str__(self):
         return self.activity
 
