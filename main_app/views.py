@@ -13,17 +13,20 @@ from django.urls import reverse
 def home(request):
     return render(request, 'home.html')
 
+
 def excursions_index(request):
     excursions = Excursion.objects.all()
     return render(request, 'destinations/detail.html', {'excursions': excursions})
 
+
 def bookings_index(request):
     bookings = Booking.objects.all()
-    
+
     # Add destinations to each booking
     for booking in bookings:
-        booking.destinations_str = ", ".join([destination.location for destination in booking.cruise.destinations.all()])
-    
+        booking.destinations_str = ", ".join(
+            [destination.location for destination in booking.cruise.destinations.all()])
+
     return render(request, 'bookings/index.html', {'bookings': bookings})
 
 
@@ -53,7 +56,7 @@ def cruise_detail(request, cruise_id):
     return render(request, 'cruises/detail.html', {
         'cruise': cruise,
         'excursions': excursions
-        })
+    })
 
 
 def destinations_index(request):
