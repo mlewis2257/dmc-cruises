@@ -8,23 +8,47 @@
   }
 
   .container-fluid {
-    padding: 40px;
-}
-
+    padding: 0;
+  }
+  .wrapper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrapper {
+    background-color: rgba(14, 31, 183, 0.6);
+    margin: 0;
+    padding: 10px;
+    height: 80vh;
+    width: 80vh;
+  }
+  p {
+    font-size: 12px;
+    color: white;
+  }
+  h4 {
+    color: white;
+  }
 </style>
-
-<h1>{{ destination.location }} Details</h1>
-
-<div class="wrapper">
-  <p>{{ destination.description }}</p>
-</div>
-<div>
-  <h2>Available Excursions:</h2>
-  {% for excursion in destination.excursions.all %}
-    <h3>{{ excursion.activity }}</h3>
-    <p>{{ excursion.description }}</p>
-    <h3><img class="eimg" src="{{ excursion.picturepath }}"></h3>
+<div
+  class="background-image"
+  style="background: url({{destination.picturepath}}); 
+  background-repeat: no-repeat; background-size: cover; 
+  object-fit: contain; height: 100vh; width: 100vw;"
+>
+  <div class="wrapper-container">
+    <div class="wrapper">
+      <h4>{{ destination.location }}</h4>
+      <p>{{ destination.description }}</p>
+      <div>
+        <h4>Available Excursions:</h4>
+        {% for excursion in destination.excursions.all %}
+        <h4>{{ excursion.activity }}</h4>
+        <p>{{ excursion.description }}</p>
+        <!-- <h3><img class="eimg" src="{{ excursion.picturepath }}" /></h3> -->
+      </div>
+    </div>
   </div>
+</div>
 
-  {% endfor %}
-{% endblock %}
+{% endfor %} {% endblock %}
