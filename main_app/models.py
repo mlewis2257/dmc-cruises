@@ -26,7 +26,7 @@ class Excursion(models.Model):
     activity = models.CharField(max_length=500)
     description = models.TextField(max_length=2000, default="")
     picturepath = models.CharField(max_length=500, default="")
-    
+
     def __str__(self):
         return self.activity
 
@@ -96,7 +96,9 @@ class Room(models.Model):
         default=LOCATION[0][0]
     )
 
+    price = models.IntegerField(default=1)
+
     booking = models.ForeignKey(Booking, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.get_type_display()} Cabin Number: {self.cabin_number}"
+        return f"{self.get_type_display()} Cabin Number: {self.cabin_number} Price: {self.price}"
