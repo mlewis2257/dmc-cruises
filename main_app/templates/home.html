@@ -17,15 +17,85 @@
       margin:0;
       padding:0;  
   }
-
+  
+  .group {
+    width: 24.6%;
+    margin:0;
+    padding:7px;
+    text-decoration: none;
+    color:white;
+    background-color:blue;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+  }
 
   #cruise_home {
     border-style: groove;
     border-color: blue;
+    background-color: none;
     width: 24.6%;
     margin:0;
-    padding:7px;
+    padding:0px;
   }
+
+
+  .btn {
+   margin: 0 95px;
+   text-decoration: none;
+   color:white;
+   background-color:blue;
+   text-align: center;
+   letter-spacing: .5px;
+   -webkit-transition: background-color .2s ease-out;
+   transition: background-color .2s ease-out;
+   cursor: pointer;
+  }
+
+
+  h1 {
+    font-family: "ProximaNova-Regular",Arial,sans-serif;
+    color:darkblue;
+    font-size: 1rem;
+    letter-spacing: .125rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin:30px 500px -3px;
+    padding: 11px;
+  }
+  
+  h2 {
+    font-family: "Kapra-Optimized",Impact,"Arial Narrow",Arial,sans-serif;
+    color:darkblue;
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 110%;
+    margin: 5px 455px;
+    padding: 29px;
+  }
+  
+  h4 {
+      font-family: "ProximaNova-Regular",Arial,sans-serif;
+      color:darkblue;
+      font-size: 1rem;
+      letter-spacing: .125rem;
+      text-transform: uppercase;
+      margin:0;
+      margin-left: 15px;
+      padding:20px;
+  }
+  h5 {
+        font-family: "Kapra-Optimized",Impact,"Arial Narrow",Arial,sans-serif;
+        color:darkblue;
+        font-size: 3rem;
+        text-transform: uppercase;
+        line-height: 110%;
+        margin: 10px;
+        padding: 24px;
+    }
 
   h6 {
       font-family: "ProximaNova-Regular",Arial,sans-serif;
@@ -34,91 +104,46 @@
       margin:0;
       padding: 25px;
   }
-    
 
-  h5 {
-    font-family: "Kapra-Optimized",Impact,"Arial Narrow",Arial,sans-serif;
-    color:darkblue;
-    font-size: 3rem;
-    text-transform: uppercase;
-    line-height: 110%;
-    margin: 0;
-    padding: 24px;
-}
+  h7 {
+    margin-left: 25px;
+  }
 
-h4 {
-    font-family: "ProximaNova-Regular",Arial,sans-serif;
-    color:darkblue;
-    font-size: 1rem;
-    letter-spacing: .125rem;
-    text-transform: uppercase;
-    margin:0;
-    padding:20px;
-}
-
-h1 {
-  font-family: "ProximaNova-Regular",Arial,sans-serif;
-  color:darkblue;
-  font-size: 1rem;
-  letter-spacing: .125rem;
-  text-transform: uppercase;
-  margin:30px 500px -3px;
-  padding: 11px;
-}
-
-h2 {
-  font-family: "Kapra-Optimized",Impact,"Arial Narrow",Arial,sans-serif;
-  color:darkblue;
-  font-size: 3rem;
-  text-transform: uppercase;
-  line-height: 110%;
-  margin: 5px 455px;
-  padding: 29px;
-}
-
-#cruise_future {
-  border-style: groove;
-  border-color: blue;
-    margin:2px 107px;
+  #cruise_future {
+    border-style: groove;
+    border-color: blue;
+    margin:0px 107px;
     padding:7px;
     float: right;
     clear: none;
     width: 35%;
+    margin-right: 260px;
 }
 
-#cruise_fut {
-  border-style: groove;
-  border-color:blue;
-    margin:5px;
+  #cruise_fut {
+    border-style: groove;
+    border-color:blue;
+    margin:0px ;
     padding:7px;
     float: right;
     clear: none;
     width: 35%;
-}
+  }
 
- .btn {
-  margin: 0 95px;
-  text-decoration: none;
-  color:white;
-  background-color:blue;
-  text-align: center;
-  letter-spacing: .5px;
-  -webkit-transition: background-color .2s ease-out;
-  transition: background-color .2s ease-out;
-  cursor: pointer;
-}
 
-.btn:hover, .btn-large:hover, .btn-small:hover {
-  background-color: lightblue;
-}
+  .btn:hover, .btn-large:hover, .btn-small:hover {
+    background-color: lightblue;
+  }
+
+  #destination {
+    margin-top: 50px;
+    padding-top: 30px;
+  }
 
 </style>
-<div class="grid text-center" style="--bs-columns: 3;">
-  <div></div>
-</div>
+<div class="grid text-center" style="--bs-columns: 3;"></div>
 
-<div id="image-wrapper">
-</div>
+<div id="image-wrapper"></div>
 
 <div class="row">
   <div class="col-sm-6 order-md-2">
@@ -129,20 +154,20 @@ h2 {
 
 
 <div class="row my-custome-row Justify-content-center align-items-center">
-  <div class="col-sm-4 order-md-2"><div class="p-3 border bg-light"> 
-    <img id="cruise_home" src="../../static/images/weekened.png">
-    <img id="cruise_home" src="../../static/images/alaskaa.png">
-    <img id="cruise_home" src="../../static/images/sale.png">
-    <img id="cruise_home" src="../../static/images/night.png">
-  </div></div>
-  <div class="col-sm-4 order-md-3"><div class="p-3 border bg-light"></div></div>
-
+  <div class="col-sm-4 order-md-2" class="p-3 border bg-light"> 
+    <img class="group" id="cruise_home" src="../../static/images/weekened.png">
+    <img class="group" id="cruise_home" src="../../static/images/alaskaa.png">
+    <img class="group" id="cruise_home" src="../../static/images/sale.png">
+    <img class="group" id="cruise_home" src="../../static/images/night.png">
+  </div>
+  <div class="col-sm-4 order-md-3" class="p-3 border bg-light"></div>
 </div>
+
  
-  <button type="button" class="btn btn-primary">BOOK NOW</button>
-  <button type="button" class="btn btn-primary">BOOK NOW</button>
-  <button type="button" class="btn btn-primary">BOOK NOW</button>
-  <button type="button" class="btn btn-primary">BOOK NOW</button>
+  <button class="group" type="button" class="btn btn-primary">BOOK NOW</button>
+  <button class="group" type="button" class="btn btn-primary">BOOK NOW</button>
+  <button class="group" type="button" class="btn btn-primary">BOOK NOW</button>
+  <button class="group" type="button" class="btn btn-primary">BOOK NOW</button>
 
 <div class="row">
   <div class="col-sm-6 order-md-2">
@@ -151,16 +176,17 @@ h2 {
   </div>
 </div>
 
-<div class="row my-custome-row Justify-content-center align-items-center">
+<div class="row2 my-custome-row Justify-content-center align-items-center">
   <div class="col-sm-4 order-md-2"><div class="p-3 border bg-light"> 
     <img id="cruise_future" src="../../static/images/dom.png">
     <img id="cruise_fut" src="../../static/images/tif.png">
-  </div></div>
-  <div class="col-sm-4 order-md-3"><div class="p-3 border bg-light"></div></div>
+  </div>
+  <div class="col-sm-4 order-md-3"></div>
+  <div class="p-3 border bg-light"></div>
 </div>
 
 
-<h5>Destinations Beyond Your Imagination</h5>
+<h5 id="destination">Destinations Beyond Your Imagination</h5>
 <h6>Set sail on a captivating journey that will take you to some of the world's most stunning and exotic destinations. Explore pristine tropical islands, stroll through charming coastal towns, and immerse yourself in the rich cultures of each port of call. From the white-sand beaches of the Caribbean to the historic cities of Europe, our cruise promises an unforgettable voyage.</h6>
 
 <div class="row">
@@ -172,8 +198,9 @@ h2 {
       <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/haw.png"></a>
     </div>
   </div>
+</div>
 
-  <h5>Luxury Awaits at Sea</h5>
+<h5>Luxury Awaits at Sea</h5>
 <h6>Our cruise ship is a floating paradise, offering you the epitome of comfort and elegance. Choose from a range of spacious cabins and suites, each designed to provide you with a private sanctuary at sea. Wake up to panoramic ocean views from your private balcony, indulge in world-class cuisine at our gourmet restaurants, and unwind in our luxurious spa and wellness center.</h6>
 
 <div class="row">
@@ -185,33 +212,36 @@ h2 {
       <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/water.png"></a>
     </div>
   </div>
+</div>
 
-  <h5>Endless Entertainment</h5>
-  <h6>Your days at sea are filled with excitement and entertainment. Enjoy dazzling Broadway-style shows, live music performances, and thrilling casino nights. Relax by the pool, take a dip in our crystal-clear waters, or savor a cocktail while watching the sunset from our expansive sun deck.</h6>
+<h5>Endless Entertainment</h5>
+<h6>Your days at sea are filled with excitement and entertainment. Enjoy dazzling Broadway-style shows, live music performances, and thrilling casino nights. Relax by the pool, take a dip in our crystal-clear waters, or savor a cocktail while watching the sunset from our expansive sun deck.</h6>
   
-  <div class="row">
-    <div class="col-4">
-      <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
-        <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="../../static/images/yellow.png"></a>
-        <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="../../static/images/cshow.png"></a>
-        <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/casino.png"></a>
-        <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/drink.png"></a>
-      </div>
+<div class="row">
+  <div class="col-4">
+    <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+      <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="../../static/images/yellow.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="../../static/images/cshow.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/casino.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/drink.png"></a>
     </div>
+  </div>
+</div>
 
 
-    <h5>Adventure Beyond the Ship</h5>
-    <h6>In each port of call, you'll have the chance to explore the local culture, partake in exciting shore excursions, and create lasting memories. Dive into crystal-clear waters for snorkeling adventures, explore ancient ruins, or simply relax on a beautiful beach. The choice is yours.</h6>
+<h5>Adventure Beyond the Ship</h5>
+<h6>In each port of call, you'll have the chance to explore the local culture, partake in exciting shore excursions, and create lasting memories. Dive into crystal-clear waters for snorkeling adventures, explore ancient ruins, or simply relax on a beautiful beach. The choice is yours.</h6>
     
-    <div class="row">
-      <div class="col-4">
-        <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
-          <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="../../static/images/camel.png"></a>
-          <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="../../static/images/elph.png"></a>
-          <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/fish.png"></a>
-          <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/canu.png"></a>
-        </div>
-      </div>
+<div class="row">
+  <div class="col-4">
+    <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+      <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="../../static/images/camel.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="../../static/images/elph.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/fish.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/canu.png"></a>
+    </div>
+  </div>
+</div>
 
 <h4>THE MOST EXCITING CRUISE DESTINATIONS</h4>
 <h5>AND AWARD-WINNING SHIPS</h5>
