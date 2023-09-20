@@ -96,8 +96,6 @@ class Room(models.Model):
         default=LOCATION[0][0]
     )
 
-    price = models.IntegerField(default=1)
-
     booking = models.ForeignKey(Booking, on_delete=models.CASCADE)
 
     def __str__(self):
