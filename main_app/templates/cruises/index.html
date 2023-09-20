@@ -56,6 +56,41 @@ h2 {
   margin:0;
   padding:7px;
 }
+
+.cruiseimg {
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
 </style>
 
 <div id="image-wrapper">
@@ -74,8 +109,12 @@ h2 {
   <a href="{% url 'cruise_detail' cruise.id %}">
     <div class="card">
         <div class="card-content">
-            <span class="card-title">{{ cruise.name }}</span>
-            <img class=""cruiseimg" src="{{ cruise.picturepath }}">
+            <div class="container">
+              <img class="cruiseimg" alt="Avatar" src="{{ cruise.picturepath }}">
+              <div class="overlay">
+                <div class="text">{{ cruise.name }}</div>
+              </div>
+            </div>
         </div>
     </div>
   </a>
