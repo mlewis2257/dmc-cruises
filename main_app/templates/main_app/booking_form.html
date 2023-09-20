@@ -2,6 +2,70 @@
 
 {% block content %}
 
+<style>
+
+  #image-wrapper {
+    height: 600px;
+    background-size: cover;
+    width: 100%;
+    background-image:url("../../static/images/inside.png");
+  }
+  
+  h1 {
+    font-family: "Kapra-Optimized",Impact,"Arial Narrow",Arial,sans-serif;
+    color: darkblue;
+    font-size: 3rem;
+    text-transform: uppercase;
+    line-height: 110%;
+    margin: 0;
+    padding: 24px;
+}
+
+h5 {
+font-family: "Kapra-Optimized",Impact,"Arial Narrow",Arial,sans-serif;
+color:darkblue;
+font-size: 3rem;
+text-transform: uppercase;
+line-height: 110%;
+margin: 0;
+padding: 11px;
+}
+
+h6 {
+  font-family: "ProximaNova-Regular",Arial,sans-serif;
+  font-size: 1rem;
+  line-height: 150%;
+  margin:0;
+  padding: 25px;
+}
+
+#cruise_home {
+  border-style: groove;
+  border-color: blue;
+  width: 24.6%;
+  margin:0;
+  padding:7px;
+}
+
+.btn, .btn-large, .btn-small {
+  text-decoration: none;
+  color: #fff;
+  background-color: blue;
+  text-align: center;
+  letter-spacing: .5px;
+  -webkit-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+  cursor: pointer;
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+  background-color: lightblue;
+}
+</style>
+
+<div id="image-wrapper">
+</div>
+
 {% if object %}
   <h1>Edit <span class="teal-text">{{ object.name }}</span></h1>
 {% else %}
@@ -22,5 +86,7 @@
     const selectEl = document.querySelectorAll('select');
     M.FormSelect.init(selectEl); })
 </script>
+
+
 
 {% endblock %}
