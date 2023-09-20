@@ -53,6 +53,12 @@
     margin: 0;
     padding: 7px;
   }
+
+  #card-container {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-template-rows: 3fr 3fr;
+  }
 </style>
 
 <div id="image-wrapper"></div>
@@ -71,17 +77,18 @@
 </div>
 
 <h1>Available Destinations</h1>
-{% for destination in destinations %}
+<div id="container col-sm-6">
+  {% for destination in destinations %}
   <a href="{% url 'destination_detail' destination.id %}">
     <div class="card">
-        <div class="card-content">
-            <span class="card-title">{{ destination.location }}</span>
-            <img class="destimg" src="{{ destination.picturepath }}">
-        </div>
+      <div class="card-content">
+        <span class="card-title">{{ destination.location }}</span>
+        <img class="destimg" src="{{ destination.picturepath }}" />
+      </div>
     </div>
-  </div>
-</a>
-{% endfor %}
+  </a>
+  {% endfor %}
+</div>
 
 <h1>Get a Taste of The Adventures on Land</h1>
 <h2>Want to share your Adventures? Mention @DMCRUISES to be featured.</h2>
