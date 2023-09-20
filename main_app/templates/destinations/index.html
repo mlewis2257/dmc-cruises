@@ -72,10 +72,12 @@
 
 <h1>Available Destinations</h1>
 {% for destination in destinations %}
-<a href="{% url 'destination_detail' destination.id %}">
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">{{ destination.location }}</span>
+  <a href="{% url 'destination_detail' destination.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ destination.location }}</span>
+            <img class="destimg" src="{{ destination.picturepath }}">
+        </div>
     </div>
   </div>
 </a>
