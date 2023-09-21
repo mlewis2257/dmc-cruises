@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
+
 
 <style>
 
@@ -7,7 +9,7 @@
     height: 600px;
     background-size: cover;
     width: 100%;
-    background-image:url("../../static/images/amb.png");
+    background-image:url("{% static 'images/amb.png' %}");
   }
   #cruise_home {
     border-style: groove;
@@ -94,10 +96,10 @@ h6 {
 <div class="row">
   <div class="col-4">
     <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
-      <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="../../static/images/slide.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="../../static/images/topslide.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/nightboat.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/whiteslide.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="{% static 'images/slide.png' %}"></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="{% static 'images/topslide.png' %}"></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="{% static 'images/nightboat.png' %}"></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="{% static 'images/whiteslide.png' %}"></a>
     </div>
   </div>
 

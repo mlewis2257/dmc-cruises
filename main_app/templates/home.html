@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 
 <style>
 
@@ -109,7 +110,7 @@
     margin-left: 25px;
   }
 
-  #cruise_future {
+  #cruise_dom {
     border-style: groove;
     border-color: blue;
     margin:0px 107px;
@@ -117,10 +118,10 @@
     float: right;
     clear: none;
     width: 35%;
-    margin-right: 260px;
+    margin-right: 128px;
 }
 
-  #cruise_fut {
+  #cruise_tif {
     border-style: groove;
     border-color:blue;
     margin:0px ;
@@ -135,9 +136,19 @@
     background-color: lightblue;
   }
 
+  #destination-container {
+         padding-top: 20px;
+         padding-bottom: 20px;
+  }
+
   #destination {
-    margin-top: 50px;
-    padding-top: 30px;
+        font-family: "Kapra-Optimized",Impact,"Arial Narrow",Arial,sans-serif;
+        color:darkblue;
+        font-size: 3rem;
+        text-transform: uppercase;
+        line-height: 2;
+        margin: 10px;
+        padding: 24px;
   }
 
 </style>
@@ -152,17 +163,15 @@
   </div>
 </div>
 
-
-<div class="row my-custome-row Justify-content-center align-items-center">
-  <div class="col-sm-4 order-md-2" class="p-3 border bg-light"> 
-    <img class="group" id="cruise_home" src="../../static/images/weekened.png">
-    <img class="group" id="cruise_home" src="../../static/images/alaskaa.png">
-    <img class="group" id="cruise_home" src="../../static/images/sale.png">
-    <img class="group" id="cruise_home" src="../../static/images/night.png">
+<div class="row">
+  <div class="col-4">
+    <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+      <a class="p-1 rounded" href="#simple-list-item-1"><img id="cruise_home" src="{% static 'images/weekenedsale.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"><img id="cruise_home" src="{% static 'images/alaskasale.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"><img id="cruise_home" src="{% static 'images/europesale.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"><img id="cruise_home" src="{% static 'images/caribbeansale.png' %}"/></a>
+    </div>
   </div>
-  <div class="col-sm-4 order-md-3" class="p-3 border bg-light"></div>
-</div>
-
  
   <a href="{% url 'bookings_create' %}"><button class="group" type="button" class="btn btn-primary">BOOK NOW</button></a>
   <a href="{% url 'bookings_create' %}"><button class="group" type="button" class="btn btn-primary">BOOK NOW</button></a>
@@ -188,17 +197,18 @@
 </div>
 
 
+<h5 id="destination">Destinations Beyond Your Imagination</h5>
+<h6>Set sail on a captivating journey that will take you to some of the world's most stunning and exotic destinations. Explore pristine tropical islands, stroll through charming coastal towns, and immerse yourself in the rich cultures of each port of call. From the white-sand beaches of the Caribbean to the historic cities of Europe, our cruise promises an unforgettable voyage.</h6>
 
 <div class="row">
   <div class="col-4">
     <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
-      <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="../../static/images/spain.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="../../static/images/africa.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/thai.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/haw.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-1"><img id="cruise_home" src="{% static 'images/spain.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"><img id="cruise_home" src="{% static 'images/africa.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"><img id="cruise_home" src="{% static 'images/thailand.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"><img id="cruise_home" src="{% static 'images/hawaii.png' %}"/></a>
     </div>
   </div>
-</div>
 
 <h5>Luxury Awaits at Sea</h5>
 <h6>Our cruise ship is a floating paradise, offering you the epitome of comfort and elegance. Choose from a range of spacious cabins and suites, each designed to provide you with a private sanctuary at sea. Wake up to panoramic ocean views from your private balcony, indulge in world-class cuisine at our gourmet restaurants, and unwind in our luxurious spa and wellness center.</h6>
@@ -206,42 +216,38 @@
 <div class="row">
   <div class="col-4">
     <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
-      <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="../../static/images/hat.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="../../static/images/chair.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/food.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/water.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-1"><img id="cruise_home" src="{% static 'images/hat.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"><img id="cruise_home" src="{% static 'images/chair.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"><img id="cruise_home" src="{% static 'images/food.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"><img id="cruise_home" src="{% static 'images/water.png' %}"/></a>
     </div>
   </div>
-</div>
 
 <h5>Endless Entertainment</h5>
 <h6>Your days at sea are filled with excitement and entertainment. Enjoy dazzling Broadway-style shows, live music performances, and thrilling casino nights. Relax by the pool, take a dip in our crystal-clear waters, or savor a cocktail while watching the sunset from our expansive sun deck.</h6>
-  
+
 <div class="row">
   <div class="col-4">
     <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
-      <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="../../static/images/yellow.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="../../static/images/cshow.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/casino.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/drink.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-1"><img id="cruise_home" src="{% static 'images/familyplaying.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"><img id="cruise_home" src="{% static 'images/cruiseshow.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"><img id="cruise_home" src="{% static 'images/casino.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"><img id="cruise_home" src="{% static 'images/drink.png' %}"/></a>
     </div>
   </div>
-</div>
-
 
 <h5>Adventure Beyond the Ship</h5>
 <h6>In each port of call, you'll have the chance to explore the local culture, partake in exciting shore excursions, and create lasting memories. Dive into crystal-clear waters for snorkeling adventures, explore ancient ruins, or simply relax on a beautiful beach. The choice is yours.</h6>
-    
+
 <div class="row">
   <div class="col-4">
     <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
-      <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="../../static/images/camel.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="../../static/images/elph.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/fish.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/canu.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-1"><img id="cruise_home" src="{% static 'images/camel.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"><img id="cruise_home" src="{% static 'images/elph.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"><img id="cruise_home" src="{% static 'images/fish.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"><img id="cruise_home" src="{% static 'images/canu.png' %}"/></a>
     </div>
   </div>
-</div>
 
 <h4>THE MOST EXCITING CRUISE DESTINATIONS</h4>
 <h5>AND AWARD-WINNING SHIPS</h5>
