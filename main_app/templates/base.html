@@ -30,6 +30,20 @@
       nav ul a:hover {
         background-color: lightblue;
       }
+      .page-footer {
+        padding-bottom: 20px;
+      }
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+      .footer-links a:hover {
+        color: white;
+        transition: 0.5s all ease-in-out;
+      }
     </style>
   </head>
   <body>
@@ -48,14 +62,14 @@
           <ul class="left">
             <li>
               <a href="{% url 'home' %}" class="left brand-logo"
-                ><img style="width: 86px" src="../../static/images/logo.png"
+                ><img style="width: 86px" src="{% static 'images/logo.png' %}"
               /></a>
             </li>
           </ul>
           <ul class="left">
             <li>
               <a href="{% url 'home' %}" class="left brand-logo"
-                ><img style="width: 86px" src="../../static/images/logo.png"
+                ><img style="width: 86px" src="{% static 'images/logo.png' %}"
               /></a>
             </li>
           </ul>
@@ -75,14 +89,15 @@
     </header>
     <main class="container-fluid">{% block content %} {% endblock %}</main>
     <footer class="page-footer">
-      <div>
-        <h3>Home</h3>
-        <h3>Home</h3>
-        <h3>Home</h3>
-        <h3>Home</h3>
-        <h3>Home</h3>
+      <div class="center">
+        <ul class="footer-links">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'cruises' %}">Cruise Ships</a></li>
+          <li><a href="{% url 'destinations' %}">Destinations</a></li>
+          <li><a href="{% url 'index' %}">Bookings</a></li>
+        </ul>
       </div>
-      <div class="right">All Rights Reserved, &copy; DMC CRUISES &nbsp;</div>
+      <div class="center">All Rights Reserved, &copy; DMC CRUISES &nbsp;</div>
     </footer>
   </body>
 </html>

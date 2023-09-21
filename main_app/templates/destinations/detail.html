@@ -10,6 +10,11 @@
   .container-fluid {
     padding: 0;
   }
+  .background-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .wrapper-container {
     display: flex;
     justify-content: center;
@@ -22,11 +27,12 @@
     height: 80vh;
     width: 80vh;
   }
-  p {
-    font-size: 12px;
+  h4,
+  h5 {
     color: white;
   }
-  h4 {
+  p {
+    font-size: 12px;
     color: white;
   }
 </style>
@@ -43,7 +49,7 @@
       <div>
         <h4>Available Excursions:</h4>
         {% for excursion in destination.excursions.all %}
-        <h4>{{ excursion.activity }}</h4>
+        <h5>{{ excursion.activity }}</h5>
         <p>{{ excursion.description }}</p>
         <!-- <h3><img class="eimg" src="{{ excursion.picturepath }}" /></h3> -->
       </div>
