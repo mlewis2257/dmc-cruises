@@ -113,6 +113,7 @@
     float: right;
     clear: none;
     width: 85%;
+    width: 85%;
     margin-right: 128px;
   }
 
@@ -123,6 +124,7 @@
     padding: 7px;
     float: right;
     clear: none;
+    width: 125%;
     width: 125%;
   }
 
@@ -147,12 +149,17 @@
     padding: 24px;
   }
 
-#homepics {
-  display: flex;
-  justify-content: center;
-  justify-content: space-evenly;
-}
+  #homepics {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+  }
 
+  #homepics {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+  }
 </style>
 <div class="grid text-center" style="--bs-columns: 3"></div>
 
@@ -193,27 +200,60 @@
   <div class="col-sm-4 order-md-3" class="p-3 border bg-light"></div>
 </div>
 
- 
-  <a href="{% url 'bookings_create' %}"><button class="group" type="button" class="btn btn-primary">BOOK NOW</button></a>
-  <a href="{% url 'bookings_create' %}"><button class="group" type="button" class="btn btn-primary">BOOK NOW</button></a>
-  <a href="{% url 'bookings_create' %}"><button class="group" type="button" class="btn btn-primary">BOOK NOW</button></a>
-  <a href="{% url 'bookings_create' %}"><button class="group" type="button" class="btn btn-primary">BOOK NOW</button></a>
+<a href="{% url 'bookings_create' %}"
+  ><button class="group" type="button" class="btn btn-primary">
+    BOOK NOW
+  </button></a
+>
+<a href="{% url 'bookings_create' %}"
+  ><button class="group" type="button" class="btn btn-primary">
+    BOOK NOW
+  </button></a
+>
+<a href="{% url 'bookings_create' %}"
+  ><button class="group" type="button" class="btn btn-primary">
+    BOOK NOW
+  </button></a
+>
+<a href="{% url 'bookings_create' %}"
+  ><button class="group" type="button" class="btn btn-primary">
+    BOOK NOW
+  </button></a
+>
+<a href="{% url 'bookings_create' %}"
+  ><button class="group" type="button" class="btn btn-primary">
+    BOOK NOW
+  </button></a
+>
+<a href="{% url 'bookings_create' %}"
+  ><button class="group" type="button" class="btn btn-primary">
+    BOOK NOW
+  </button></a
+>
+<a href="{% url 'bookings_create' %}"
+  ><button class="group" type="button" class="btn btn-primary">
+    BOOK NOW
+  </button></a
+>
 
-  <div class="row">
-    <div class="col-sm-6 order-md-2">
-      <h1>FUTURE GAMECHANGERS</h1>
-      <h2>ARRIVING 2024</h2>
-    </div>
-  </div>
-
-<div class="row2 my-custome-row Justify-content-center align-items-center">
-  <div class="col-sm-4 order-md-2"  id="homepics">
-    <a href="http://localhost:8000/cruises/4/"><img id="cruise_dom" src="../../static/images/dom.png"></a>
-    <a href="http://localhost:8000/cruises/3/"><img id="cruise_tif" src="../../static/images/tif.png"></a>
+<div class="row">
+  <div class="col-sm-6 order-md-2">
+    <h1>FUTURE GAMECHANGERS</h1>
+    <h2>ARRIVING 2024</h2>
   </div>
 </div>
 
-
+<div class="row2 my-custome-row Justify-content-center align-items-center">
+  <div class="col-sm-4 order-md-2" id="homepics">
+    <div class="col-sm-4 order-md-2" id="homepics">
+      <a href="http://localhost:8000/cruises/4/"
+        ><img id="cruise_dom" src="../../static/images/dom.png"
+      /></a>
+      <a href="http://localhost:8000/cruises/3/"
+        ><img id="cruise_tif" src="../../static/images/tif.png"
+      /></a>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-4">
