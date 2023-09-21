@@ -1,10 +1,10 @@
 The App's name is DMC CRUISES.
 Explore Your Dream Getaway: Welcome to DMC CRUISES!
 At DMC CRUISES, we believe that every journey begins with a click. Welcome aboard our virtual gateway to the world's most stunning cruise adventures. Our website is your all-in-one resource for planning, booking, and embarking on the cruise vacation of your dreams. Discover a world of options from the moment you land on our homepage, you'll be immersed in a world of possibilities. Browse a vast selection of cruise itineraries, each promising a unique blend of relaxation, exploration, and luxury. Whether you're a seasoned cruiser or embarking on your maiden voyage, you'll find the perfect cruise for your tastes and preferences. Our website is designed with your ease and convenience in mind. User-friendly navigation ensures that you can effortlessly search for cruises by destination, cruise boat, duration, or theme. Find the ideal cruise itinerary that aligns with your desired travel experience. Dive deep into the details of each cruise. Explore comprehensive descriptions of the destinations. Booking your dream cruise is just a few clicks away. Our secure and seamless booking platform allows you to reserve your spot on your chosen cruise with confidence. Enjoy the convenience of browsing available cruise boats, selecting destinations, and customizing your experience. At DMC CRUISES, we're committed to making your cruise booking experience as seamless as the ocean itself. Start your journey today and set sail toward unforgettable adventures. 
-Your dream cruise is just a click away! Access DMC CRUISES Here 
+Your dream cruise is just a click away! Access <a href="https://dmccruises-6f1a47dff91f.herokuapp.com/">DMC CRUISES Here</a> 
 
-<img src=""/>
-<img src=""/>
+<img src="https://i.imgur.com/0Z2MWec.png">
+<img src="https://i.imgur.com/Z8DYOBo.png">
 
 The Technologies i Used:
 •	Python
@@ -14,12 +14,15 @@ The Technologies i Used:
 Getting Started
 Experience DMC CRUISES Here:
 1.	Access the Website: Open your preferred web browser and enter the URL of DMC CRUISES website in the address bar. Press “Enter” to access the site.
-<img src=""/>
-<img src=""/>
+
+<img src="https://i.imgur.com/0Z2MWec.png">
+<img src="https://i.imgur.com/TMLOapH.png">
 
 2. Homepage Exploration: You’ll typically land on the website’s homepage. Here, you’ll find an overview of the cruise options and any featured promotions. Take a moment to look for tabs that lead to key information, such as “Destinations,” “Cruise boats”, or “Bookings”. 
-<img src=""/>
-<img src=""/>
+
+<img src="https://i.imgur.com/AaUKkJH.png">
+<img src="https://i.imgur.com/RuDiAQL.png">
+<img src="https://i.imgur.com/Z8DYOBo.png">
 
 3. Sign up Page: On DMC CRUISES website to book a cruise you must sign in by creating a username and password. Your password must contain at least 8 characters, can’t be a commonly used password and can’t be entirely numeric.
 <img src=""/>
