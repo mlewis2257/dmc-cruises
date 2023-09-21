@@ -9,6 +9,13 @@
     width: 100%;
     background-image:url("../../static/images/amb.png");
   }
+  #cruise_home {
+    border-style: groove;
+    border-color: blue;
+    width: 24.6%;
+    margin:0;
+    padding:7px;
+  }
   
   h1 {
     font-family: "Kapra-Optimized",Impact,"Arial Narrow",Arial,sans-serif;
@@ -18,6 +25,7 @@
     line-height: 110%;
     margin: 0;
     padding: 24px;
+    text-align: center;
 }
 
 h5 {
@@ -28,6 +36,7 @@ text-transform: uppercase;
 line-height: 110%;
 margin: 0;
 padding: 11px;
+text-align: center;
 }
 
 h6 {
@@ -36,17 +45,11 @@ h6 {
   line-height: 150%;
   margin:0;
   padding: 25px;
-}
-
-#cruise_home {
-  border-style: groove;
-  border-color: blue;
-  width: 24.6%;
-  margin:0;
-  padding:7px;
+  text-align: center;
 }
 
 .btn, .btn-large, .btn-small {
+  width: 100%;
   text-decoration: none;
   color: #fff;
   background-color: blue;
@@ -68,6 +71,7 @@ h6 {
 <h1>All Bookings</h1>
 <h6>Don't miss the opportunity to embark on this extraordinary journey. Whether you're seeking relaxation, adventure, or a bit of both, our cruise offers it all. Secure your spot on board, and let us take care of every detail, so you can focus on making memories that will last a lifetime</h6>
 
+
 <p><a href="{% url 'bookings_create' %}"><button type="button" class="btn btn-primary">BOOK NOW</button></a></p>
 {% for booking in bookings %}
   <a href="{% url 'detail' booking.id %}">
@@ -80,7 +84,30 @@ h6 {
   </a>
 {% endfor %}
 <div class="col s6">
-  <h1>Available Cruises</h1>
+  <h5>Adventures Ashore</h5>
+<h6>Each port of call presents a new opportunity for discovery. Immerse yourself in local cultures, embark on guided shore excursions, or simply relax on pristine beaches. Your cruise booking opens the door to unforgettable onshore experiences.</h6>
+
+
+<h5>Exclusive Offers</h5>
+<h6>Act now to take advantage of exclusive promotions and discounts available for early bookings. Whether it's onboard credits, cabin upgrades, or special amenities, our cruise booking rewards you for reserving your place in advance.</h6>
+
+<div class="row">
+  <div class="col-4">
+    <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+      <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="../../static/images/slide.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="../../static/images/topslide.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/nightboat.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/whiteslide.png"></a>
+    </div>
+  </div>
+
+  <h5>Entertainment Beyond Imagination</h5>
+  <h6>From dazzling Broadway-style shows to live music and thrilling casino nights, your cruise booking guarantees endless entertainment. Lounge by the pool, soak in the Jacuzzi, or sip cocktails while watching the sunset from our panoramic decks.</h6>
+    
+
+  <h5>A World of Exploration</h5>
+  <h6>Your cruise booking unlocks a world of breathtaking destinations. Sail to sun-drenched Caribbean islands, discover the rich history of Europe's coastal cities, or explore the exotic allure of Asia and beyond. With carefully crafted itineraries, each port of call promises a new and exciting adventure</h6>
+
   {% if cruise.count %}
     {% for cruise in cruise.all %}
       <div class="card">
@@ -98,7 +125,7 @@ h6 {
       </div>
     {% endfor %}
   {% else %}
-    <h5>{{booking.user}} Already Has All Cruises Booked! Bon Voyage!</h5>
+    <h5>{{booking.user}} Bon Voyage!</h5>
   {% endif %}
 </div>
 {% endblock %}

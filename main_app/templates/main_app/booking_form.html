@@ -8,7 +8,14 @@
     height: 600px;
     background-size: cover;
     width: 100%;
-    background-image:url("../../static/images/inside.png");
+    background-image:url("../../static/images/greece.png");
+  }
+  #cruise_home {
+    border-style: groove;
+    border-color: blue;
+    width: 24.6%;
+    margin:0;
+    padding:7px;
   }
   
   h1 {
@@ -19,6 +26,7 @@
     line-height: 110%;
     margin: 0;
     padding: 24px;
+    text-align: center;
 }
 
 h5 {
@@ -29,6 +37,7 @@ text-transform: uppercase;
 line-height: 110%;
 margin: 0;
 padding: 11px;
+text-align: center;
 }
 
 h6 {
@@ -37,17 +46,11 @@ h6 {
   line-height: 150%;
   margin:0;
   padding: 25px;
-}
-
-#cruise_home {
-  border-style: groove;
-  border-color: blue;
-  width: 24.6%;
-  margin:0;
-  padding:7px;
+  text-align: center;
 }
 
 .btn, .btn-large, .btn-small {
+  width: 100%;
   text-decoration: none;
   color: #fff;
   background-color: blue;
@@ -81,12 +84,39 @@ h6 {
   <input type="submit" value="Submit!" class="btn">
 </form>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const selectEl = document.querySelectorAll('select');
-    M.FormSelect.init(selectEl); })
-</script>
 
+
+<h5>Elegant and Spacious Cabins</h5>
+<h6>Your comfort is our priority. Your cruise booking ensures a well-appointed cabin or suite where you can unwind and recharge after each day's adventures. Whether you choose an ocean-view room or a private balcony suite, you'll enjoy a peaceful retreat at sea.</h6>
+
+
+<h5>Unleash Your Wanderlust: Secure Your Dream Cruise Today!</h5>
+<h6>Are you ready to turn your travel dreams into reality? Your ticket to an extraordinary adventure awaits with our exclusive cruise booking! Imagine the thrill of exploring stunning destinations while enjoying the utmost in luxury and comfort. Here's why you should reserve your spot now:</h6>
+
+<div class="row">
+  <div class="col-4">
+    <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+      <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="../../static/images/green.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="../../static/images/slipper.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/people.png"></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/chop.png"></a>
+    </div>
+  </div>
+
+  <h5>Exquisite Dining Experiences</h5>
+  <h6>Indulge in a culinary journey like no other. Our cruise offers a variety of dining options, from gourmet restaurants with world-class chefs to casual eateries serving up international flavors. Savor delectable dishes, fine wines, and tantalizing desserts at sea.</h6>
+    
+
+  <h5>Seamless Planning</h5>
+  <h6>Booking with us is a breeze. Our experienced team is here to assist you every step of the way, from selecting the perfect cruise to ensuring a smooth and stress-free experience.
+    Don't wait to experience the world from a new perspective. Secure your cruise booking today and embark on a journey of a lifetime. Contact us now to make your dream adventure a reality!</h6>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const selectEl = document.querySelectorAll('select');
+      M.FormSelect.init(selectEl); })
+    </script>
+  
 
 
 {% endblock %}
