@@ -33,10 +33,24 @@
 h2 {
     font-family: "ProximaNova-Regular",Arial,sans-serif;
     font-size: 1rem;
-    line-height: 150%;
+    line-height: 155%;
     margin:0;
     padding: 25px;
 }
+
+.card {
+  width: 153%;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#card-title {
+  font-weight: bold;
+  font-size: 30px;
+}
+
 </style>
 
 
@@ -65,30 +79,19 @@ h2 {
   <div class="col s6 col-offset-3">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">{{ cruise.name }}</span>
+        <span id="card-title">{{ cruise.name }}</span>
         <div class="card-action">
     </div>
-        <p>Duration: {{ cruise.duration }} days</p>
-        <p>Sail From: {{ cruise.sail_from }}</p>
+        <p><span class="bold">Duration</span>: {{ cruise.duration }} days</p>
+        <p><span class="bold">Sail From</span>: {{ cruise.sail_from }}</p>
+        {% for destination in cruise.destinations.all %}
+        <span class=“card-title”>
+          <p><span class="bold">Destination</span>: </p>
+          <a href="{% url 'destination_detail' destination.id %}"><span> {{ destination.location }}</span></a>
+        </span>
+        {% endfor %}
       </div>
     </div>
-  </div>
-  <div class=“row”>
-    <div class=“col s6">
-      <h3>{{ cruise.name }} Destinations</h3>
-      {% if cruise.destinations.count %}
-      {% for destination in cruise.destinations.all %}
-      <div class=“card”>
-        <div class=“card-content”>
-          <span class=“card-title”>
-            <a href="{% url 'destination_detail' destination.id %}"><span> {{ destination.location }}</span></a>
-          </span>
-        </div>
-      </div>
-      {% endfor %} 
-      {% else %}
-    <h5>No Cruises</h5>
-    {% endif %}
   </div>
 </div>
 
