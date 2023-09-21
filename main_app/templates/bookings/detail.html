@@ -49,7 +49,6 @@ h6 {
 }
 
 .btn, .btn-large, .btn-small {
-  width: 100%;
   text-decoration: none;
   color: #fff;
   background-color: blue;
@@ -63,6 +62,30 @@ h6 {
 .btn:hover, .btn-large:hover, .btn-small:hover {
   background-color: lightblue;
 }
+
+.col_s6 {
+  margin: 0 auto;
+}
+
+div.row {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+form {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+div.cardcontent {
+  align-items: center;
+  text-align: center;
+}
+
+.card {
+  width: 203%
+}
+
 </style>
 
 <div id="image-wrapper">
@@ -123,10 +146,10 @@ h6 {
 <div class="row">
   <div class="col s6">
     <h3>{{ booking.cruise.name }}s Destinations</h3>
-      {% for destination in booking.cruise.destinations.all %}
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">
+              {% for destination in booking.cruise.destinations.all %}
               Sails to {{ destination.location }}
               {% for excursion in destination.excursions.all %}  
                 <p>Your Excursions: {{ excursion.activity }}</p>
@@ -135,8 +158,8 @@ h6 {
             </span>
           </div>
         </div>
-          </div>
-        </div>
+      </div>
+    </div>
   </div>
 </div>
   
