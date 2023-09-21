@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} {% load static %}
 
 <style>
   #image-wrapper {
@@ -7,7 +7,7 @@
     width: 100%;
     background-image: url("{% static 'images/greece.png' %}");
   }
-  #cruise_home {
+  #main_bookingform {
     border-style: groove;
     border-color: blue;
     width: 24.6%;
@@ -103,20 +103,11 @@
   <div class="col-4">
     <div
       id="simple-list-example"
-      class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center"
-    >
-      <a class="p-1 rounded" href="#simple-list-item-1">
-        <img id="cruise_home" src="{% static 'images/green.png' %}"
-      /></a>
-      <a class="p-1 rounded" href="#simple-list-item-2">
-        <img id="cruise_home" src="{% static 'images/slipper.png' %}"
-      /></a>
-      <a class="p-1 rounded" href="#simple-list-item-3">
-        <img id="cruise_home" src="{% static 'images/people.png' %}"
-      /></a>
-      <a class="p-1 rounded" href="#simple-list-item-4">
-        <img id="cruise_home" src="{% static 'images/chop.png' %}"
-      /></a>
+      class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+      <a class="p-1 rounded" href="#simple-list-item-1"><img id="main_bookingform" src="{% static 'images/insidecruise.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"><img id="main_bookingform" src="{% static 'images/bedroom.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"><img id="main_bookingform" src="{% static 'images/deck.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"><img id="main_bookingform" src="{% static 'images/tablefood.png' %}"/></a>
     </div>
   </div>
 

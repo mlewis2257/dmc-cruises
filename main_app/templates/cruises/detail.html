@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 
 <style>
 
@@ -19,6 +20,13 @@
     margin: 0;
     padding: 24px;
 }
+ h2 {
+  font-family: "ProximaNova-Regular",Arial,sans-serif;
+  font-size: 1rem;
+  line-height: 150%;
+  margin:0;
+  padding: 25px;
+}
   
   h4 {
     font-family: "ProximaNova-Regular",Arial,sans-serif;
@@ -30,13 +38,15 @@
     padding: 20px;
 }
 
-h2 {
-    font-family: "ProximaNova-Regular",Arial,sans-serif;
-    font-size: 1rem;
-    line-height: 150%;
-    margin:0;
-    padding: 25px;
+#cruises_detail {
+  border-style: groove;
+  border-color: blue;
+  width: 24.6%;
+  margin:0;
+  padding:7px;
 }
+
+
 </style>
 
 
@@ -49,13 +59,16 @@ h2 {
 <h4>Luxury Awaits at Sea</h4>
 <h2>Our cruise ship is a floating paradise, offering you the epitome of comfort and elegance. Choose from a range of spacious cabins and suites, each designed to provide you with a private sanctuary at sea. Wake up to panoramic ocean views from your private balcony, indulge in world-class cuisine at our gourmet restaurants, and unwind in our luxurious spa and wellness center.</h2>
 
+
 <div class="row">
   <div class="col-4">
-    <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
-      <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="../../static/images/room.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="../../static/images/bathroom.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/resturant.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/spa.png"></a>
+    <div
+      id="simple-list-example"
+      class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+      <a class="p-1 rounded" href="#simple-list-item-1"><img id="cruises_detail" src="{% static 'images/room.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"><img id="cruises_detail" src="{% static 'images/bathroom.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"><img id="cruises_detail" src="{% static 'images/resturant.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"><img id="cruises_detail" src="{% static 'images/spa.png' %}"/></a>
     </div>
   </div>
 

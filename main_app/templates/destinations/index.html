@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} {% load static %}
 
 <style>
   #image-wrapper {
@@ -18,24 +18,16 @@
     padding: 24px;
     text-align: center;
   }
-  
-  h6 {
-    font-family: "ProximaNova-Regular", Arial, sans-serif;
-    font-size: 1rem;
-    line-height: 150%;
-    margin: 0;
-    padding: 25px;
-    text-align: center;
-  }
 
-  h5 {
+  h2 {
     font-family: "Kapra-Optimized", Impact, "Arial Narrow", Arial, sans-serif;
     color: darkblue;
-    font-size: 3rem;
+    font-size: 2rem;
     text-transform: uppercase;
     line-height: 110%;
     margin: 0;
     padding: 11px;
+    text-align: center;
   }
 
   h5 {
@@ -48,8 +40,17 @@
     text-align: center;
     padding: 22px;
   }
+  
+  h6 {
+    font-family: "ProximaNova-Regular", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 150%;
+    margin: 0;
+    padding: 25px;
+    text-align: center;
+  }
 
-  #cruise_home {
+  #destinations_index {
     border-style: groove;
     border-color: blue;
     width: 24.6%;
@@ -57,13 +58,6 @@
     padding: 7px;
   }
 
-  #cruise_home {
-    border-style: groove;
-    border-color: blue;
-    width: 24.6%;
-    margin: 0;
-    padding: 7px;
-  }
   .container {
     position: relative;
     width: 50%;
@@ -146,26 +140,18 @@
 <h1>Get a Taste of The Adventures on Land</h1>
 <h2>Want to share your Adventures? Mention @DMCRUISES to be featured.</h2>
 
+
 <div class="row">
   <div class="col-4">
     <div
       id="simple-list-example"
-      class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center"
-    >
-      <a class="p-1 rounded" href="#simple-list-item-1">
-        <img id="cruise_home" src="../../static/images/girls.png"
-      /></a>
-      <a class="p-1 rounded" href="#simple-list-item-2">
-        <img id="cruise_home" src="../../static/images/adventure.png"
-      /></a>
-      <a class="p-1 rounded" href="#simple-list-item-3">
-        <img id="cruise_home" src="../../static/images/pig.png"
-      /></a>
-      <a class="p-1 rounded" href="#simple-list-item-4">
-        <img id="cruise_home" src="../../static/images/kids.png"
-      /></a>
+      class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+      <a class="p-1 rounded" href="#simple-list-item-1"><img id="destinations_index" src="{% static 'images/girls.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"><img id="destinations_index" src="{% static 'images/adventure.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"><img id="destinations_index" src="{% static 'images/pig.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"><img id="destinations_index" src="{% static 'images/kids.png' %}"/></a>
     </div>
   </div>
-</div>
+
 
 {% endblock %}
