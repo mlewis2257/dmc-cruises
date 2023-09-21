@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 
 <style>
 
@@ -21,27 +22,6 @@
     text-align: center;
 }
 
-h6 {
-  font-family: "ProximaNova-Regular",Arial,sans-serif;
-  font-size: 1rem;
-  line-height: 150%;
-  margin:0;
-  padding: 25px;
- 
-}
-
-
-h5 {
-font-family: "Kapra-Optimized",Impact,"Arial Narrow",Arial,sans-serif;
-color:darkblue;
-font-size: 3rem;
-text-transform: uppercase;
-line-height: 110%;
-margin: 0;
-padding: 11px;
-text-align: center;
-}
-
 h2 {
   font-family: "ProximaNova-Regular",Arial,sans-serif;
   color:darkblue;
@@ -52,7 +32,27 @@ h2 {
   padding: 11px;
 }
 
-#cruise_home {
+h5 {
+  font-family: "Kapra-Optimized",Impact,"Arial Narrow",Arial,sans-serif;
+  color:darkblue;
+  font-size: 3rem;
+  text-transform: uppercase;
+  line-height: 110%;
+  margin: 0;
+  padding: 11px;
+  text-align: center;
+  }
+
+h6 {
+  font-family: "ProximaNova-Regular",Arial,sans-serif;
+  font-size: 1rem;
+  line-height: 150%;
+  margin:0;
+  padding: 25px;
+ 
+}
+
+#cruises_index {
   border-style: groove;
   border-color: blue;
   width: 24.6%;
@@ -130,11 +130,15 @@ h2 {
 
 <div class="row">
   <div class="col-4">
-    <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
-      <a class="p-1 rounded" href="#simple-list-item-1"> <img id="cruise_home" src="../../static/images/photo.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-2"> <img id="cruise_home" src="../../static/images/couple.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-3"> <img id="cruise_home" src="../../static/images/mother.png"></a>
-      <a class="p-1 rounded" href="#simple-list-item-4"> <img id="cruise_home" src="../../static/images/kids.png"></a>
+    <div
+      id="simple-list-example"
+      class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+      <a class="p-1 rounded" href="#simple-list-item-1"><img id="cruises_index" src="{% static 'images/photo.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-2"><img id="cruises_index" src="{% static 'images/couple.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-3"><img id="cruises_index" src="{% static 'images/mother.png' %}"/></a>
+      <a class="p-1 rounded" href="#simple-list-item-4"><img id="cruises_index" src="{% static 'images/red.png' %}"/></a>
     </div>
   </div>
+
+
 {% endblock %}
