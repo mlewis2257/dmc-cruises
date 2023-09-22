@@ -25,36 +25,45 @@ Experience DMC CRUISES Here:
 <img src="https://i.imgur.com/Z8DYOBo.png">
 
 3. Sign up Page: On DMC CRUISES website to book a cruise you must sign in by creating a username and password. Your password must contain at least 8 characters, can’t be a commonly used password and can’t be entirely numeric.
-<img src=""/>
-<img src=""/>
+<img src="https://i.imgur.com/Wd5YIhA.png">
 
  4. log in Page: If you already have an account with DMC CRUISES, you can just log in using your username and password. 
-<img src=""/>
-<img src=""/>
+<img src="https://i.imgur.com/L8zZPKS.png">
+
 
 5.  Search for Cruises: To find specific cruise boats, look for a “Browse Cruise” button, often located at the top of the page. Click on this button to access the best cruise ships where you will meet the fleet. Scroll down to check out each cruise boat. At the bottom you will access get a taste of life at sea where you can share your cruise experience by mentioning DMCRUISES to be featured. 
-<img src=""/>
-<img src=""/>
+<img src="https://i.imgur.com/3UweUPq.png">
+
 
 6. View Cruise Boat Details: When you click on a cruise boat, you’ll be taken to a page with more detailed information about that cruise. Here you can receive the duration, where the cruise is sailing from, and the cruise destination.
-<img src=""/>
-<img src=""/>
+<img src="https://i.imgur.com/sLRLvCE.png">
+
 
  7. Search for Destination: To find specific destination, look for a “Browse Destination” button, often located at the top of the page. Click on this button to access the extraordinary list of available destinations. Scroll down to check out each destination. At the bottom you will see get a taste of life at sea where you can share your cruise experience by mentioning DMCRUISES to be featured.
-<img src=""/>
-<img src=""/>
+<img src="https://i.imgur.com/wa3y5HU.png">
+<img src="https://i.imgur.com/bsXtIfa.png">
+
+
 8. View Cruise Destination Details: When you click on a destination, you’ll be taken to a page with more detailed information about that destination. Here you can receive the information about that destination and excursion.
-<img src=""/>
-<img src=""/>
+<img src="https://i.imgur.com/uXEWsZ9.png">
+
+
 9. View All my bookings: When you click on a view all my bookings, you’ll be taken to a page where you can book now. Here you can also see the cruises you have booked.
-<img src=""/>
-<img src=""/>
+<img src="https://i.imgur.com/7hBQgtF.jpg">
+<img src="https://i.imgur.com/R2QpflF.png">
+
+
 10. Booking Details: Proceed to the booking detail page by clicking “Book Now”. Here you will be asked to answer 4 questions the type of cabin, the cabin number, the location, and the booking number. Review your booking details carefully before finalizing the reservation. Don’t worry if you make a mistake, you can edit and delete it from this page.
-<img src=""/>
-<img src=""/>
+<img src="https://i.imgur.com/v0yijRs.png">
+<img src="https://i.imgur.com/nJePM1j.png">
+<img src="https://i.imgur.com/TJwoCKF.png">
+
+
+
 11. Edit: If you need to edit your booking it will take you to the edit page where you can change the price, date, cruise boat, and username.
-<img src=""/>
-<img src=""/>
+<img src="https://i.imgur.com/AtfVm4w.png">
+<img src="https://i.imgur.com/EImDYVX.jpg">
+<img src="https://i.imgur.com/Kck2KZt.jpg">
 
 
 #### Next Steps (icebox):
